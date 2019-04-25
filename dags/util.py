@@ -18,7 +18,7 @@ def read_file(fp):
 
 def vault_auth(role_id=os.getenv("VAULT_ROLE_ID"),
                secret_id=os.getenv("VAULT_SECRET_ID")):
-    client = hvac.Client(os.environ["VAULT_ENDPOINT"])
+    client = hvac.Client(url=os.environ["VAULT_ENDPOINT"], verify=False)
     client.auth_approle(role_id, secret_id)
     return client
 
