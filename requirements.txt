@@ -1,0 +1,10 @@
+# Package names are sorted alphabetically
+apache-airflow[celery,postgres,redis,crypto,gcp_api]==1.10.2
+kubernetes
+
+# extra packages for pods
+google-api-python-client
+httplib2
+
+# vault
+hvac[parser]
