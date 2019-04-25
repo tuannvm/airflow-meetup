@@ -1,6 +1,5 @@
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
-from dags.constants.airflow import default_args
 from dags.util import read_secret, vault_auth
 
 
@@ -21,7 +20,6 @@ dag = DAG(
     schedule_interval=None,
     max_active_runs=1,
     catchup=False,
-    default_args=default_args,
 )
 
 
