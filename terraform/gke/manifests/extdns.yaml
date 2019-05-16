@@ -1,0 +1,16 @@
+provider: cloudflare
+cloudflare:
+  apiKey: "<api-key>"
+  email: "<email>"
+  proxied: false
+domainFilters: ["dev.tuannvm.com"]
+image:
+  name: registry.opensource.zalan.do/teapot/external-dns
+  tag: v0.5.9
+rbac:
+  create: true
+extraArgs:
+  annotation-filter: external-dns.dev.tuannvm.com/enable=true
+txtOwnerId: ""
+policy: upsert-only
+logLevel: debug
